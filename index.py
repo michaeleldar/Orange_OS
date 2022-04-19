@@ -18,9 +18,9 @@ while True:
         variables.set_cloud_variable("clou2", "")
         variables.set_cloud_variable("user", "")
         try:
-            os.mkdir(buffer_sender)
+            os.mkdir(str(buffer_sender))
         except:
             pass
-        file = open(buffer_name, 'w')
-        file.write(buffer_contents)
+        file = open(str(buffer_name), 'w')
+        file.write(str(buffer_contents))
         
