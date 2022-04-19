@@ -12,7 +12,9 @@ print(variables.get_cloud_variable_value("cloud", limit=2))
 while True:
     buffer_name = variables.get_cloud_variable_value("cloud", limit=2)
     buffer_contents = variables.get_cloud_variable_value("clou2", limit=2)
-    if buffer_name != "" and buffer_contents != "":
+    buffer_sender = variables.get_cloud_variable_value("user", limit=2)
+    if buffer_name != "" and buffer_contents != "" and buffer_sender != "":
         variables.set_cloud_variable("cloud", "")
         variables.set_cloud_variable("clou2", "")
+        variables.set_cloud_variable("user", "")
         
