@@ -21,6 +21,6 @@ while True:
             os.mkdir(str(buffer_sender))
         except:
             pass
-        file = open(str(buffer_name), 'w')
+        file = open(str(buffer_sender) + str(buffer_name), 'w')
         file.write(str(buffer_contents))
         
