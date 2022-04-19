@@ -17,4 +17,10 @@ while True:
         variables.set_cloud_variable("cloud", "")
         variables.set_cloud_variable("clou2", "")
         variables.set_cloud_variable("user", "")
+        try:
+            os.mkdir(buffer_sender)
+        except:
+            pass
+        file = open(buffer_name, 'w')
+        file.write(buffer_contents)
         
