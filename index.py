@@ -13,7 +13,7 @@ while True:
         os.mkdir("./" + variables.client_username)
     while variables.get_cloud_variable_value(variable_name="cloud")[0] == 0:
         continue
-    file = open("./" + variables.client_username + "/" + variables.get_cloud_variable_value(variable_name="cloud")[0], 'w')
-    file.write(variables.get_cloud_variable_value(variable_name="cloud 2")[0])
+    file = open("./" + variables.client_username + "/" + str(variables.get_cloud_variable_value(variable_name="cloud")[0]), 'w')
+    file.write(str(variables.get_cloud_variable_value(variable_name="cloud 2")[0]))
     variables.set_cloud_variable(variable_name="cloud", value=0)
     variables.set_cloud_variable(variable_name="cloud 2", value=0)
