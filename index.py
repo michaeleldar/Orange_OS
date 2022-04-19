@@ -21,4 +21,4 @@ while True:
     variables.set_cloud_variable(variable_name="cloud", value=0)
     time.sleep(0.2)
     variables.set_cloud_variable(variable_name="clou2", value=0)
-    time.sleep(0.1)
+    time.sleep(0.8)
