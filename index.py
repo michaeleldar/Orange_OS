@@ -15,8 +15,9 @@ while True:
     while variables.get_cloud_variable_value(variable_name="clou2")[0] == "0" or variables.get_cloud_variable_value(variable_name="clou2")[0] == 0:
         continue
     file = open("./" + variables.client_username + "/" + str(variables.get_cloud_variable_value(variable_name="cloud")[0]), 'w')
+    print(str(variables.get_cloud_variable_value(variable_name="clou2")[0]))
     file.write(str(variables.get_cloud_variable_value(variable_name="clou2")[0]))
     variables.set_cloud_variable(variable_name="cloud", value=0)
-    time.sleep(0.1)
+    time.sleep(0.2)
     variables.set_cloud_variable(variable_name="clou2", value=0)
     time.sleep(0.1)
