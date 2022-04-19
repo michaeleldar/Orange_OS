@@ -1,9 +1,9 @@
-from django.db import connection
-from requests import session
-from scratchclient import ScratchSession
+import scratchconnect
 from mypass import my_pass
 import time
-session = ScratchSession("applejuice_alt", my_pass)
-connection = session.create_cloud_connection(677505040)
-time.sleep(5)
-connection.set_cloud_variable("my variable", 5000)
+
+user = scratchconnect.ScratchConnect("applejuice_alt", my_pass)
+project = user.connect_project(project_id=677505040)
+variables = project.connect_cloud_variables()
+variables.get_variable_data(limit=100, offset=0)
+print(variables.get_cloud_variable_value(variable_name="my variable", limit=1000))
