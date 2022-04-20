@@ -10,13 +10,15 @@ print(variables.get_cloud_variable_value("user", limit=2)[0])
 
 
 def decode_username(username):
+    print(len(username) // 2)
     print(type(username))
     chars = ["", "", "", "", "", "", "", "", "", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "x", "y", "z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "+", "=", "~", "`", "|", "\\", "/", "", ".", "<", ">", " ", "A", "B", "C", "D", "E", "F", "G", "H", "I", 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
     decoded = ""
-    i = 1
-    for x in range(len(username)):
-        decoded = decoded + chars[(username[i] + username[i + 1]) + 1]
+    i = 0
+    for x in range(len(username) // 2):
+        decoded = decoded + chars[int((username[i] + username[i + 1]))]
         i += 2
+    return decoded
 print(decode_username(variables.get_cloud_variable_value("user", limit=2)[0]))
 
 
